@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Albaz - الباز</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@200..1000&display=swap" rel="stylesheet">
+    <script>
+      tailwind.config = {
+        darkMode: 'class',
+        theme: {
+          extend: {
+            fontFamily: {
+              sans: ['Cairo', 'sans-serif'],
+            },
+            colors: {
+              primary: 'var(--color-primary)', 
+              secondary: 'var(--color-secondary)',
+              dark: '#0f172a', // slate-900 fixed for footer/header backgrounds if needed
+            },
+            backgroundColor: {
+              page: 'var(--bg-page)',
+              card: 'var(--bg-card)',
+            },
+            textColor: {
+              base: 'var(--text-base)',
+              muted: 'var(--text-muted)',
+            }
+          }
+        }
+      }
+    </script>
+    <style>
+      :root {
+        /* Default Light Theme */
+        --color-primary: #2563eb; /* blue-600 */
+        --color-secondary: #f59e0b; /* amber-500 */
+        --bg-page: #f8fafc; /* slate-50 */
+        --bg-card: #ffffff; /* white */
+        --text-base: #1e293b; /* slate-800 */
+        --text-muted: #64748b; /* slate-500 */
+      }
+
+      /* Custom Scrollbar for better aesthetics */
+      ::-webkit-scrollbar {
+        width: 8px;
+      }
+      ::-webkit-scrollbar-track {
+        background: var(--bg-page);
+      }
+      ::-webkit-scrollbar-thumb {
+        background: #888;
+        border-radius: 4px;
+      }
+      ::-webkit-scrollbar-thumb:hover {
+        background: #555;
+      }
+      
+      /* Dark mode overrides applied via JS class or data attribute if using tailwind 'class' mode, 
+         but here we will use CSS variables updates in App.tsx for simpler runtime switching */
+    </style>
+  <script type="importmap">
+{
+  "imports": {
+    "react-dom/": "https://esm.sh/react-dom@^19.2.4/",
+    "react": "https://esm.sh/react@^19.2.4",
+    "react/": "https://esm.sh/react@^19.2.4/",
+    "lucide-react": "https://esm.sh/lucide-react@^0.563.0",
+    "@google/genai": "https://esm.sh/@google/genai@^1.39.0",
+    "react-router-dom": "https://esm.sh/react-router-dom@^7.13.0"
+  }
+}
+</script>
+</head>
+  <body class="bg-page text-base font-sans antialiased transition-colors duration-300">
+    <div id="root"></div>
+  </body>
+</html>
